@@ -2,36 +2,43 @@
 Crie um programa que leia o valor total de uma compra. Se o valor for superior a R$ 100,00, aplique um desconto de 10%. Caso contrário, aplique um desconto de 5%. Exiba o valor final da compra após aplicar o desconto.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CalculadoraDescontoCompra
+namespace DescontoCompra
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            // Solicita ao usuário o valor total da compra
-            Console.WriteLine("Digite o valor total da compra:");
-            decimal valorCompra = Convert.ToDecimal(Console.ReadLine());
+            decimal Porcentagem, desconto, valor;
 
-  // Verifica se o valor da compra é superior a R$ 100,00
-            if (valorCompra > 100)
+Console.WriteLine("Informe o preço do produto: ");
+            valor = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Informe a Porcentagem de desconto: ");
+            Porcentagem = Convert.ToInt32(Console.ReadLine());
+
+desconto = valor * (Porcentagem / 100);
+
+Console.WriteLine("Subtraia o valor do desconto do preço: ");
+            desconto = Convert.ToDecimal(Console.ReadLine());
+
+Console.WriteLine("Exibir o valor do desconto e o preço final: " + valor);
+            valor = Convert.ToDecimal(Console.ReadLine());
+
+
+if (valor > 100)
             {
-  // Aplica um desconto de 10%
-                decimal desconto = valorCompra * 0.10m;
-                decimal valorFinal = valorCompra - desconto;
-
-  // Exibe o valor final da compra
-                Console.WriteLine($"Valor final da compra com 10% de desconto: {valorFinal.ToString("C")}");
+                Console.WriteLine("Aplique desconto de 10%");
             }
-            else
+else
             {
-                // Aplica um desconto de 5%
-                decimal desconto = valorCompra * 0.05m;
-                decimal valorFinal = valorCompra - desconto;
-
-  // Exibe o valor final da compra
-                Console.WriteLine($"Valor final da compra com 5% de desconto: {valorFinal.ToString("C")}");
+                Console.WriteLine("Aplique desconto de 5%");
             }
+            Console.ReadKey();
         }
     }
 }
